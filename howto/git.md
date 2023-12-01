@@ -11,7 +11,7 @@ Before you begin, make sure you have the following already installed. Installing
 1. [Git](https://git-scm.com/downloads)
 2. [Gpg4Win](https://www.gpg4win.org/) for Windows users, or simply `gpg` for Linux users
 3. [Git LFS](https://git-lfs.com/) for LFS
-4. A Git client of your choice
+4. A Git client of your choice for Windows Users - feel free to not install this if you're comfortable with command line.
 
 {: .warning }
 A lot of Git Clients (Sourcetree, GitKraken, etc) has their own Git already included. **DO NOT USE THEIR GIT** as you won't be able to use gpg to sign your commits!
@@ -23,6 +23,9 @@ First, find your gpg.exe location that you installed when you install Gpg4Win. B
 With all of the above already installed, open **Kleopatra** and ensure you have a key in bold that matches your git name and email. The bold key means that you own the **secret** to that key, and thus able to sign things with it.
 
 If nothing match, you'll need to create one. But assuming you have a match, make sure to note its **Key ID**, without any spaces.
+
+{: .info }
+You can also find your Key ID on the terminal - follow the direction below on GPG Setup for Linux Users if you wanted to do so.
 
 Now open a terminal (Powershell, Git Bash, etc) and type in these commands, replacing the text in brackets (including the brackets itself):
 
@@ -36,6 +39,28 @@ Now open a terminal (Powershell, Git Bash, etc) and type in these commands, repl
 This will apply gpg signing to **every repository that you deal with on that particular computer**, including non-Incidia repositories. This is not a problem as long as you use the same name and email on every repository on that computer. If you only want to apply this on one particular repository - which does mean you'll have to repeat these steps for each repository, change `--global` to `--local`
 
 You are now ready to commit.
+
+## GPG Setup: Linux (Ubuntu) Users
+
+The steps are exactly the same as Windows, but to look for the Key ID, you'll need to run
+
+`gpg --list-secret-keys --keyid-format long`
+
+Find your name and email. The output will look similar to this:
+
+```
+sec   rsa4096/DC57B25E5064B3AA 2022-08-03 [SC]
+      96AFCA68CD8DBF15C86E114CDC57B25E5064B3AA
+uid                 [ ultimate] Alex Jones <alex@jones.com>
+ssb   rsa4096/DC57B25E5064B3AB 2022-08-28 [E]
+```
+
+The Key ID is on the first line, after `sec rsa4096/` in the example, so in the example, the Key ID is `DC57B25E5064B3AA`
+
+{: .info }
+You can also do this on Windows. Makes it easy to copy-paste.
+
+To find gpg, you can run `which gpg`
 
 # Pre-Commit Preparations
 
@@ -76,12 +101,17 @@ Now to wait for the review. There are 2 outcomes for the review.
 
 ## Approved
 
-Nothing needs to be done. The PR will be merged soon.
+Nothing needs to be done. The PR will be merged soon. When? No one knows, but your job is done the minute your work is approved.
+
+On PR with multiple approvals, your job is done the minute everyone approves.
 
 ## Changes Requested
 
-The PR contain things that need to be changed. Make the requested changes, then click `Re-request review` beside the Reviewer's name (in this case mmgfrcs) to request another review.
+The PR contain things that need to be changed. Make the requested changes, then click `Re-request review` beside the Reviewer's name (in this case `mmgfrcs` but it might not be on multiple reviewer scenario) to request another review.
 
 # Post-Merge
 
 After your PR is merged, your changes will arrive on the default branch. Locally, switch to the default branch, then delete your created branch.
+
+{: .info }
+You don't actually need to delete your branch locally; You can just merge the default branch with yours. Merging, however, runs a risk of a wipeout - as has happened before, so be careful when merging!
