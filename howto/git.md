@@ -19,7 +19,23 @@ First, find your gpg.exe location that you installed when you install Gpg4Win. B
 
 With all of the above already installed, open **Kleopatra** and ensure you have a key in bold that matches your git name and email. The bold key means that you own the **secret** to that key, and thus able to sign things with it.
 
-If nothing match, you'll need to create one. But assuming you have a match, make sure to note its **Key ID**, without any spaces.
+If nothing match, you'll need to create one - or import one if you already have them. To import one, you need to drag-and-drop your secret key to Kleopatra.
+
+To create one, do the following:
+1. Click **File -> New Key Pair** (or just press Ctrl+N)
+2. Click **Create a personal OpenPGP key pair**
+3. Type the name and email exactly as it is on Github/Gitea, then click **Advanced Settings**
+    - In **Key Material**, choose **RSA** and select **4,096 bits**, then check **+ RSA** below it and also select **4,096 bits**
+    - (Optional) Uncheck **Valid Until** (see below for notes), then press OK
+
+{: .info }
+While it is recommended to set a validity date for your GPG keys, dealing with key rotation is going to be quite a hassle. You're free to leave it on and change it
+
+4. Check **protect the generated key with a passphrase**, and then click **Create**
+5. On the dialog that appears asking for the passphrase, type in your desired passphrase twice, then click **OK**
+6. Wait until it's done
+
+If you have a match, make sure to note its **Key ID**, without any spaces.
 
 {: .info }
 You can also find your Key ID on the terminal - follow the direction below on GPG Setup for Linux Users if you wanted to do so.
