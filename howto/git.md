@@ -7,14 +7,11 @@ All repo in Incidia has a rather troublesome requirement: all commits must be si
 
 # GPG Setup: Initial Setup
 
-Before you begin, make sure you have the following already installed. Installing and configuring these is out of scope for this How To.
+Before you begin, make sure you have the following already installed. Refer to the [Git Installation How-To](/howto/git-install.html) for help in installing them.
 1. [Git](https://git-scm.com/downloads)
 2. [Gpg4Win](https://www.gpg4win.org/) for Windows users, or simply `gpg` for Linux users
 3. [Git LFS](https://git-lfs.com/) for LFS
 4. A Git client of your choice for Windows Users - feel free to not install this if you're comfortable with command line.
-
-{: .warning }
-A lot of Git Clients (Sourcetree, GitKraken, etc) has their own Git already included. **DO NOT USE THEIR GIT** as you won't be able to use gpg to sign your commits!
 
 ## GPG Setup: Windows Users
 
@@ -39,6 +36,9 @@ Now open a terminal (Powershell, Git Bash, etc) and type in these commands, repl
 This will apply gpg signing to **every repository that you deal with on that particular computer**, including non-Incidia repositories. This is not a problem as long as you use the same name and email on every repository on that computer. If you only want to apply this on one particular repository - which does mean you'll have to repeat these steps for each repository, change `--global` to `--local`
 
 You are now ready to commit.
+
+{: .warning }
+A lot of Git Clients (Sourcetree, GitKraken, etc) has their own Git already included. Ensure that you have set it to use system git or it **will not** work!
 
 ## GPG Setup: Linux (Ubuntu) Users
 
