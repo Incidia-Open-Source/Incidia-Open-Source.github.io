@@ -20,7 +20,7 @@ First, find your gpg.exe location that you installed when you install Gpg4Win. B
 
 With all of the above already installed, open **Kleopatra** and ensure you have a key in bold that matches your git name and email. The bold key means that you own the **secret** to that key, and thus able to sign things with it.
 
-If nothing match, you'll need to create one - or import one if you already have them. To import one, you need to drag-and-drop your secret key to Kleopatra.
+If nothing match, you'll need to create one - or import one if you already have them. To import one, you need to drag-and-drop your secret key file to Kleopatra.
 
 To create one, do the following:
 1. Click **File -> New Key Pair** (or just press Ctrl+N)
