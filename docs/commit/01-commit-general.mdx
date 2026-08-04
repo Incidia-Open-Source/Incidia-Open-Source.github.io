@@ -1,0 +1,62 @@
+# How to Post Your Changes
+
+
+## Pre-Commit Preparations
+
+Before you make your changes, make sure that:
+1. You have everything in the [Git Configuration How-To](/git/git-config) done and ready
+2. You are on the default branch (master/develop)
+3. Your local copy of the default branch is up to date
+4. You have no changes detected yet - if you do, discard them
+
+Now, with all 3 requirements satisfied, make a new branch. the name of the branch can be anything, but it's recommended to use your name, along with the main changes, in lowercase [kebab-case](https://www.theserverside.com/definition/Kebab-case), where spaces are replaced with dashes (-). Example: `reza-logo`
+
+## Commit!
+
+In the new branch, make your changes and commit them. If you have done the above, a window asking for a password for your gpg secret will appear. If this dialogue did not appear, your GPG configuration is incorrect and you'll need to redo the [Git Configuration How-To](/git/git-config) again. After you submitted the password, the commit should be successful.
+
+When the commit succeeded, push it to the repository.
+
+:::info
+Some Git client has the option to `Commit and push`, or has an option `Push immediately to (branch)`, allowing you to commit and push in one go. You might want to use this option instead. However, **make sure to use this option only when you have made sure your GPG configuration is correct!**
+:::
+
+## Pull Request
+
+Assuming the push succeeded, now you need to Create a Pull/Merge Request (PR/MR). 
+
+:::info
+Github and Gitea = Pull Request (PR), Gitlab = Merge Request (MR). Both are the exact same, just a terminology difference. The following instructions would use Pull Request (PR), but note that the two are the same.
+:::
+
+Open the repository in Github/Gitea, then go to `Pull Request > Create a pull request`. On the next screen, change the `compare` branch to your newly created branch, and leave `base` as is. 
+
+:::info
+In Github, if you have just pushed a new branch, Github will offer you an option to create a PR from the newly pushed branch. Assuming that branch is yours, you can immediately click `Create a pull request` there, which does the above automatically.
+:::
+
+Verify the commits that appear, then click `Create pull request`. On the screen that appear, select `mmgfrcs` on the **Reviewers** and **Assignees** option, give it a title and a description, then click `Create pull request` again.
+
+:::info
+You can create a PR before you actually want to merge it - useful to check that your changes will not affect other parts of the repository that you did not touch. To do this, click the arrow next to the `Create pull request` button, then select `Create draft pull request` instead. When you're ready to merge the branch, click `Ready for Review`
+:::
+
+Now to wait for the review. There are 2 outcomes for the review.
+
+### Approved
+
+Nothing needs to be done. The PR will be merged soon. When? No one knows, but your job is done the minute your work is approved.
+
+On PR with multiple approvals, your job is done the minute everyone approves.
+
+### Changes Requested
+
+The PR contain things that need to be changed. Make the requested changes, then click `Re-request review` beside the Reviewer's name (in this case `mmgfrcs` but it might not be on multiple reviewer scenario) to request another review.
+
+## Post-Merge
+
+After your PR is merged, your changes will arrive on the default branch. Locally, switch to the default branch, then delete your created branch.
+
+:::info
+You don't actually need to delete your branch locally; You can just merge the default branch with yours. Merging, however, runs a risk of a wipeout - as has happened before, so be careful when merging!
+:::
