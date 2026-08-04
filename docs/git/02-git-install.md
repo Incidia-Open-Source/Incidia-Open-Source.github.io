@@ -2,7 +2,7 @@
 
 Moving on to a new computer and confused as to how to install Git stuff? Well, here it is.
 
-Now, on the [Git Configuration How-To](/howto/git.html), there are prerequisites to do before moving on to configuration, that is:
+Now, on the [Git Configuration How-To](/git/git-config), there are prerequisites to do before moving on to configuration, that is:
 1. [Git](https://git-scm.com/downloads)
 2. [Gpg4Win](https://www.gpg4win.org/) for Windows users, or simply `gpg` for Linux users
 3. [Git LFS](https://git-lfs.com/) for LFS
@@ -60,7 +60,7 @@ You should then be brought to an empty tab.
 
 ### Switch to System Git
 
-If you encountered a checkbox on Step 2 above, or if when following the [Git Configuration How-To](/howto/git.html) you encountered the `No secret key` error, it might be because Sourcetree is using its *own* client and not the system-wide client.
+If you encountered a checkbox on Step 2 above, or if when following the [Git Configuration How-To](/git/git-config) you encountered the `No secret key` error, it might be because Sourcetree is using its *own* client and not the system-wide client.
 
 To change this, open **Tools > Options**, then **Git**, and scroll down. The **System** button should be disabled and the **Embedded** button should be clickable, indicating that Sourcetree is using system-wide git. If this is not the case, you can click the **System** button to switch it.
 

@@ -4,7 +4,7 @@ All repo in Incidia has a rather troublesome requirement: all commits must be si
 
 ## GPG Setup
 
-Before you begin, make sure you have the following already installed. Refer to the [Git Installation How-To](/howto/git-install.html) for help in installing them.
+Before you begin, make sure you have the following already installed. Refer to the [Git Installation How-To](/git/git-install) for help in installing them.
 1. [Git](https://git-scm.com/downloads)
 2. [Gpg4Win](https://www.gpg4win.org/) for Windows users, or simply `gpg` for Linux users
 3. [Git LFS](https://git-lfs.com/) for LFS
